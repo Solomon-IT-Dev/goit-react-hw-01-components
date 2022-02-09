@@ -5,7 +5,7 @@ export default function TransactionHistory(props) {
     const { items } = props;
     
     return (
-        <table className="transaction-history">
+        <table className={s.transactionHistory}>
             <thead>
                 <tr>
                 <th>Type</th>

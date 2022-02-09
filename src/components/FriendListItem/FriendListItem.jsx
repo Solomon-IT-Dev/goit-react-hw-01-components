@@ -5,10 +5,10 @@ import s from './FriendListItem.module.css';
 export default function FriendListItem(props) {
     const { avatar, name, isOnline } = props;
     return (
-        <li className="item">
-            <span className="status" style={isOnline ? {backgroundColor: "green"} : {backgroundColor: "red"}}></span>
-            <img className="avatar" src={avatar ?? defaultImage} alt="User avatar" width="48" />
-            <p className="name">{name}</p>
+        <li className={s.item}>
+            <span className={s.status} style={isOnline ? {backgroundColor: "green"} : {backgroundColor: "red"}}></span>
+            <img className={s.avatar} src={avatar ?? defaultImage} alt="User avatar" width="48" />
+            <p className={s.name}>{name}</p>
         </li>
     );
 };

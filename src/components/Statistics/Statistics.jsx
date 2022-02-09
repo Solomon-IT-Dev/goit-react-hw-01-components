@@ -5,17 +5,23 @@ export default function Statistics(props) {
     const { title, stats } = props;
 
     return (
-        <section className="statistics">
-            {title && <h2 className="title">{title}</h2>}            
+        <section className={s.statistics}>
+            {title && <h2 className={s.title}>{title}</h2>}            
 
-            <ul className="stat-list">
-                {stats.map(stat => <li className="item" key={stat.id}>
-                    <span className="label">{stat.label}</span>
-                    <span className="percentage">{stat.percentage}%</span>
+            <ul className={s.statList}>
+                {stats.map(stat => <li className={s.item} key={stat.id} style={{
+                    backgroundColor: getRandomHexColor(),
+                }}>
+                    <span className={s.label}>{stat.label}</span>
+                    <span className={s.percentage}>{stat.percentage}%</span>
                 </li>)}
             </ul>
         </section>
     );
+};
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 };
 
 Statistics.propTypes = {

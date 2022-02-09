@@ -6,7 +6,7 @@ export default function FriendList(props) {
     const { friends } = props;
 
     return (
-        <ul className="friend-list">
+        <ul className={s.friendList}>
             {friends.map(friend => <FriendListItem
                     key={friend.id}
                     avatar={friend.avatar}
